@@ -1,0 +1,226 @@
+@import "css-generics";
+@import "@domodel/paginator";
+@import "@domodel/popup";
+
+body {
+	background-color: black;
+	color: white;
+	font-family: Arial;
+}
+
+a {
+	color: #ff602fc2;
+}
+
+input, select, button, textarea {
+	background-color: #201818;
+	color: white;
+	padding: 5px;
+	border: 1px solid #8c8282;
+	font-family: Arial;
+}
+
+#diary > .content {
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+#navigation .menu {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border: 0;
+	font-size: 1.5rem;
+	justify-self: start;
+}
+
+#navigation .add-note {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	border: 0;
+	font-size: 1.5rem;
+	justify-self: end;
+}
+
+#notes {
+	padding: 15px;
+}
+
+#calendar {
+	background-color: #201818;
+	border-bottom: 4px solid #343c27;
+}
+
+#auth {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	place-content: center;
+}
+
+.day {
+	padding: var(--SIZE_XS);
+	text-align: center;
+	cursor: pointer;
+}
+
+.day.current {
+	background-color: #575e4c52;
+}
+
+.day:hover {
+	background-color: #46572c42;
+	cursor: pointer;
+}
+
+.day.active {
+	cursor: initial;
+	background-color: #46572c;
+}
+
+.day.content {
+	position: relative;
+	text-decoration: underline;
+}
+
+.day-header {
+	background-color: #372121;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.editor {
+	position: fixed;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	background-color: black;
+	z-index: 2;
+	grid-gap: var(--SIZE_XS);
+}
+
+.editor .save {
+	position: fixed;
+	z-index: 1;
+	bottom: 15px;
+	right: 15px;
+	border: 0px none;
+	background-color: transparent;
+	font-size: large;
+}
+
+.editor .close {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	z-index: 1;
+	background-color: transparent;
+	border: 0;
+	font-size: large;
+}
+
+.editor textarea {
+	width: 100%;
+	resize: none;
+	height:100%;
+	width: 100%;
+	padding: 15px;
+	padding-right: 50px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: 0;
+}
+
+.note {
+	padding: 15px;
+}
+
+.note .content {
+	padding: 35px;
+	white-space: pre-wrap;
+	background-color: rgba(45, 35, 35, 0.13);
+	border-bottom: 8px solid rgb(70, 87, 44);
+	word-break: break-all;
+}
+
+.note .actions {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 15px;
+	margin-top: 5px;
+	justify-content: flex-end;
+	padding-top: 5px;
+	padding: 7px 0;
+}
+
+.note .actions .edit {
+	padding: 4px 15px;
+	border: 0px none;
+	background-color: #372121;
+	border: 1px solid #4d4646;
+	border-radius: 4px;
+}
+
+.note .actions .remove {
+	padding: 4px 15px;
+	border: 0px none;
+	background-color: #711414b5;
+	border: 1px solid #4d4646;
+	border-radius: 4px;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:not(:disabled):hover {
+	opacity: 0.5;
+}
+
+.pagination-controls {
+	margin-bottom: var(--SIZE_MEDIUM)
+}
+
+.pagination-controls button {
+	padding: 10px!important;
+	background-color: #46572c!important
+}
+
+.pagination-controls button:disabled {
+	background-color: #12170b!important
+}
+
+.popup {
+	display: grid;
+	pointer-events: all;
+	position: fixed;
+	overflow: auto;
+	top: 0;
+	z-index: 3;
+	background-color: rgba(0, 0, 0, .7019607843137254);
+	grid-template-rows: auto 1fr
+}
+
+.popup .close {
+	padding: 15px 25px
+}
+
+.popup .body {
+	width: 30vw;
+	place-self: center;
+	background-color: rgba(83, 57, 51, .5411764705882353)!important
+}
+
+.popup .footer {
+	grid-auto-columns: max-content;
+	justify-content: flex-end
+}
+
+.popup .body button {
+	background-color: #201818;
+	color: #fff;
+	padding: 5px;
+	border: 1px solid #8c8282
+}
